@@ -1,0 +1,336 @@
+/* Variables de Color */
+:root {
+    --color-dark-bg: #1a1a1a; /* Fondo oscuro principal */
+    --color-light-bg: #f5f5f5; /* Fondo claro para secciones */
+    --color-text-light: #e0e0e0; /* Texto claro en fondos oscuros */
+    --color-text-dark: #333333; /* Texto oscuro en fondos claros */
+    --color-gold-accent: #d2b48c; /* Dorado/Cobre para acentos */
+    --color-gold-dark: #a88760; /* Dorado más oscuro para botones */
+    --color-btn-hover: #e0c29f; /* Dorado más claro para hover */
+    --color-nav-hover: #b89870; /* Hover para navegación */
+}
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: var(--color-text-dark);
+    background-color: var(--color-light-bg);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Tipografía */
+h1, h2, h3, h4 {
+    font-family: 'Lora', serif;
+    color: var(--color-text-dark);
+    margin-bottom: 15px;
+}
+h1 { font-size: 2.5em; }
+h2 { font-size: 2.8em; color: var(--color-gold-accent); } /* Título del Héroe */
+h3 {
+    font-family: 'Lora', serif; /* La fuente elegante */
+    font-size: 2.6em; /* Más grande */
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 50px; /* Más espacio */
+    color: var(--color-gold-accent); /* Color de acento dorado */
+    letter-spacing: 1.5px; /* Un toque más "premium" */
+    text-transform: uppercase; /* Se asegura que esté en mayúsculas */
+}
+h4 { font-size: 1.5em; }
+
+p {
+    margin-bottom: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Botones */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: 600;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: var(--color-gold-dark);
+    color: #fff;
+    margin-top: 20px;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-btn-hover);
+    color: var(--color-dark-bg);
+}
+
+.btn-secondary {
+    background-color: var(--color-gold-accent); /* Fondo dorado */
+    color: var(--color-dark-bg); /* Texto oscuro */
+    border: 1px solid var(--color-gold-accent);
+    padding: 8px 15px;
+    font-size: 0.9em;
+    font-weight: 700; /* Hacemos el texto un poco más nítido */
+    margin-top: auto;
+    align-self: center;
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-btn-hover); /* Dorado más claro */
+    color: var(--color-dark-bg);
+    border: 1px solid var(--color-btn-hover);
+}
+
+/* Header */
+.main-header {
+    background-color: var(--color-dark-bg);
+    color: var(--color-text-light);
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-header .logo {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--color-gold-accent);
+    margin: 0;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.main-nav ul li {
+    margin-left: 30px;
+}
+
+.main-nav ul li a {
+    color: var(--color-gold-accent);
+    font-weight: 400;
+    position: relative;
+    padding-bottom: 5px; 
+}
+
+.main-nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: var(--color-gold-accent);
+    left: 0;
+    bottom: 0;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('fotos/fotofondo1') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 150px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    position: relative;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-content h2 {
+    font-size: 4em;
+    margin-bottom: 15px;
+    line-height: 1.1;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.hero-content p {
+    font-size: 1.3em;
+    margin-bottom: 30px;
+    color: var(--color-text-light);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+/* Featured Scores */
+.featured-scores {
+    padding: 90px 0;
+    background-color: var(--color-dark-bg);
+}
+
+.score-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.score-card {
+    /* Puedes usar #2a2a2a, #333, o un gris oscuro que te guste */
+    background-color: #2a2a2a; /* Un gris oscuro, pero no tan oscuro como el fondo */
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    padding: 25px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Un borde sutil para definir mejor la tarjeta */
+    border: 1px solid #444;
+    display: flex;
+    flex-direction: column;
+}
+
+.score-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.score-card img {
+    max-width: 100%;
+    height: 150px;
+    object-fit: contain; /* Para que la imagen de placeholder se vea bien */
+    border-radius: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #eee;
+}
+
+.score-card h4 {
+    color: var(--color-gold-accent); /* Título de la tarjeta en dorado */
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.score-card p {
+    color: var(--color-text-light); /* Texto de la tarjeta en claro */
+    font-size: 0.95em;
+    margin-bottom: 20px;
+    min-height: 40px; 
+}
+
+
+/* Footer */
+.main-footer {
+    background-color: var(--color-dark-bg);
+    color: var(--color-text-light);
+    padding: 40px 0 100px 0; 
+    text-align: center;
+    font-size: 1em;
+}
+
+.footer-content {
+    display: block; 
+    text-align: center;
+}
+
+.footer-title {
+    font-family: 'Lora', serif;
+    color: var(--color-gold-accent);
+    font-size: 4em;
+    margin-bottom: 60px;
+    letter-spacing: 2px;
+}
+
+.contact-info {
+    margin-bottom: 40px;
+    line-height: 1.8; /* Más espacio entre líneas */
+    font-size: 1.1em;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+    color: var(--color-text-light); /* Texto claro */
+}
+
+.contact-info p strong {
+    color: var(--color-gold-accent); /* Acentos en dorado */
+    margin-right: 8px;
+    font-weight: 700;
+}
+
+.copyright {
+    font-size: 0.9em;
+    color: #888; /* Un color más sutil para el copyright */
+    margin-top: 30px;
+}
+
+.social-links a {
+    color: var(--color-text-light);
+    margin-left: 20px;
+    font-size: 1.3em;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--color-gold-accent);
+}
+
+/* Responsive básico */
+@media (max-width: 768px) {
+    .main-header .container {
+        flex-direction: column;
+    }
+    .main-nav ul {
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .main-nav ul li {
+        margin: 0 15px 10px 15px;
+    }
+    .hero-content h2 {
+        font-size: 3em;
+    }
+    .hero-content p {
+        font-size: 1.1em;
+    }
+    .score-grid {
+        grid-template-columns: 1fr;
+    }
+    .footer-content {
+        flex-direction: column;
+    }
+    .social-links {
+        margin-top: 20px;
+    }
+    .social-links a {
+        margin: 0 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h2 {
+        font-size: 2.2em;
+    }
+    .hero-content p {
+        font-size: 1em;
+    }
+    .main-header .logo {
+        font-size: 1.5em;
+    }
+}
