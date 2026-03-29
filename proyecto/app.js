@@ -105,13 +105,8 @@
     const card = document.createElement("div");
     card.className = "score-card";
 
-    const link = document.createElement("a");
-    link.href = "#";
-    link.className = "card-link";
-    link.addEventListener("click", function (event) {
-      event.preventDefault();
-      window.abrirDoc(cancion.title, cancion.url);
-    });
+    const content = document.createElement("div");
+    content.className = "card-link";
 
     const title = document.createElement("h4");
     title.textContent = cancion.title || "Cancion sin titulo";
@@ -120,9 +115,9 @@
     artist.textContent =
       "Cover de " + (cancion.artist || "Artista no especificado");
 
-    link.appendChild(title);
-    link.appendChild(artist);
-    card.appendChild(link);
+    content.appendChild(title);
+    content.appendChild(artist);
+    card.appendChild(content);
 
     return card;
   }
